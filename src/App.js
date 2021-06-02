@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
+import List from "./components/List";
+
+import { data } from "./components/data";
 function App() {
+  const [people, setPeople] = useState(data);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <main>
+      <section className="sec">
+        <h2>{people.length} Premium Members</h2>
+        <List poko={people} />
+        <button
+          className="btn btn-1"
+          onClick={() => {
+            setPeople([]);
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          clear all
+        </button>
+
+        <button
+          className="btn btn-2"
+          onClick={() => {
+            setPeople(data);
+          }}
+        >
+          show all
+        </button>
+      </section>
+    </main>
   );
 }
 
