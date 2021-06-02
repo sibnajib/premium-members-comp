@@ -9,7 +9,7 @@ function App() {
   return (
     <main>
       <section className="sec">
-        <h2>{people.length} Premium Members</h2>
+        <h2>{people.length} Premium Members Here</h2>
         <List poko={people} />
         <button
           className="btn btn-1"
